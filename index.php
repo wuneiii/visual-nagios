@@ -1,6 +1,9 @@
 <?php
 	define('ROOT', dirname(__FILE__).'/');
 	
+	if($_GET['header'] == ''){
+		$_GET['header'] = 'object';
+	}
 	include_once ROOT.'func.inc.php';
 	include_once ROOT.'ui.config.php';
 	include_once ROOT.'ui.php';

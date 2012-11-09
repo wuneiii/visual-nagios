@@ -1,0 +1,34 @@
+
+define service{
+        use        online-service
+	hostgroup_name		leaf_server_vip_group_0, leaf_server_base_group_2, leaf_server_vip_group_1, leaf_server_svip_group_0, leaf_server_vip_group_2, leaf_server_vip_group_3, leaf_server_base_group_0, leaf_server_vip_group_4, leaf_server_vip_group_5, leaf_server_vip_group_6, leaf_server_base_group_1, leaf_server_vip_group_7, leaf_server_vip_group_8, leaf_server_vip_group_9, leaf_server_base_group_3, leaf_server_group_realtime, leaf_server_base_group_4, leaf_server_base_group_5, leaf_server_base_group_6, leaf_server_base_group_7, leaf_server_base_group_10, leaf_server_base_group_11, leaf_server_base_group_12,leaf_server_base_group_13
+        service_description           LeafServerPortAlive
+        check_command                 check_port_alive!10086
+}
+
+define service{
+        use        online-service
+	hostgroup_name		leaf_server_vip_group_0, leaf_server_base_group_2, leaf_server_vip_group_1, leaf_server_svip_group_0, leaf_server_vip_group_2, leaf_server_vip_group_3, leaf_server_base_group_0, leaf_server_vip_group_4, leaf_server_vip_group_5, leaf_server_vip_group_6, leaf_server_base_group_1, leaf_server_vip_group_7, leaf_server_vip_group_8, leaf_server_vip_group_9, leaf_server_base_group_3, leaf_server_base_group_4, leaf_server_base_group_5, leaf_server_base_group_6, leaf_server_base_group_7, leaf_server_base_group_10, leaf_server_base_group_11, leaf_server_base_group_12,leaf_server_base_group_13
+        service_description           MmapServerPortAlive
+        check_command                 check_port_alive!1991
+	notes			      "所有leafserver 都有mmap_server,唯有leaf_server_group_28例外，28是realtime库"
+}
+#
+#	hourly 的mmapserver会在建库时重启，有误报，先去掉了，要写脚本监控
+#
+#
+#
+
+define service {
+        use        online-service
+        hostgroup_name                leaf_server_group_hourly_1,leaf_server_group_hourly_2,leaf_server_group_hourly_3,leaf_server_group_hourly_4
+        service_description           hourly_leaf_server_serving
+        check_command                 check_nrpe!check_hourly_leaf.sh
+}
+define service{
+        use        online-service
+	hostgroup_name		leaf_server_vip_group_0, leaf_server_base_group_2, leaf_server_vip_group_1, leaf_server_svip_group_0, leaf_server_vip_group_2, leaf_server_vip_group_3, leaf_server_base_group_0, leaf_server_vip_group_4, leaf_server_vip_group_5, leaf_server_vip_group_6, leaf_server_base_group_1, leaf_server_vip_group_7, leaf_server_vip_group_8, leaf_server_vip_group_9, leaf_server_base_group_3, leaf_server_group_realtime, leaf_server_base_group_4, leaf_server_base_group_5, leaf_server_base_group_6, leaf_server_base_group_7, leaf_server_base_group_10, leaf_server_base_group_11, leaf_server_base_group_12,leaf_server_base_group_13
+        service_description           leafserver_req_qeueu_length_over_60
+        check_command                 check_leaf_request_qeueu_lenght.sh 
+	notifications_enabled		1
+}

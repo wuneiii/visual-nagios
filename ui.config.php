@@ -7,15 +7,25 @@
 
 
 	$ui_meta_array = array(
-		'nagios_object' =>array(
-			'text'=>'nagios object',
-			'left_menu' => array(
-				'host'=>'',
-				'host_group'=>'',
+		'object' =>array(
+			'text'=>'Nagios object',
+			'sub_menu' => array(
+				'host'=>array('text'=>'Host','sub_menu'=>array('Create','List')),
+				'host_group'=>array('text'=>'Host_group','sub_menu'=>array('Create','Update')),
 				'service'=>'',
 				'contract'=>'',
+                		'command' => '',
+                		'timerange'=>'',
 			),
 		),
+        'config' => array(
+            'text' => 'ÅäÖÃ',
+            'sub_menu' => array(
+                'nagios.cfg'=>'',
+                'resouces.cfg' => '',
+            ),
+            
+         ),
 		'about' => array(
 			'text' => 'about',
 			'left_menu' => array(

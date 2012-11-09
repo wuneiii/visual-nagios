@@ -1,0 +1,98 @@
+
+define contact{
+        contact_name                    xingxiaolong		; Short name of user
+        alias                           xingxiaolong		; Full name of user
+
+        email                           xingxiaolong@oneboxtech.com	; <<***** CHANGE THIS TO YOUR EMAIL ADDRESS ******
+	pager				15010525040
+
+        service_notification_period     24x7                    ; service notifications can be sent anytime
+        host_notification_period        24x7                    ; host notifications can be sent anytime
+        service_notification_options    w,u,c,r,f,s             ; send notifications for all service states, flapping events, and sc
+        host_notification_options       d,u,r,f,s               ; send notifications for all host states, flapping events, and sched
+        service_notification_commands   notify-service-by-email,notify-service-by-sms   ; send service notifications via email
+        host_notification_commands      notify-host-by-email,notify-host-by-sms ; send host notifications via email
+        }
+
+
+
+define contact{
+        contact_name                    baigang	
+        email                           baigang@oneboxtech.com
+	pager				18601299874
+
+        service_notification_period     24x7                    ; service notifications can be sent anytime
+        host_notification_period        24x7                    ; host notifications can be sent anytime
+        service_notification_options    w,u,c,r,f,s             ; send notifications for all service states, flapping events, and sc
+        host_notification_options       d,u,r,f,s               ; send notifications for all host states, flapping events, and sched
+        service_notification_commands   notify-service-by-email,notify-service-by-sms   ; send service notifications via email
+        host_notification_commands      notify-host-by-email,notify-host-by-sms ; send host notifications via email
+        }
+
+
+define contact{
+        contact_name                    suhua
+        email                           suhua@oneboxtech.com
+	pager				13811062709
+
+        service_notification_period     24x7                    ; service notifications can be sent anytime
+        host_notification_period        24x7                    ; host notifications can be sent anytime
+        service_notification_options    w,u,c,r,f,s             ; send notifications for all service states, flapping events, and sc
+        host_notification_options       d,u,r,f,s               ; send notifications for all host states, flapping events, and sched
+        service_notification_commands   notify-service-by-email,notify-service-by-sms   ; send service notifications via email
+        host_notification_commands      notify-host-by-email,notify-host-by-sms ; send host notifications via email
+        }
+
+define contact{
+        contact_name                    daofang
+        email                           chengdaofang@oneboxtech.com
+	pager				13488680644
+
+        service_notification_period     24x7                    ; service notifications can be sent anytime
+        host_notification_period        24x7                    ; host notifications can be sent anytime
+        service_notification_options    w,u,c,r,f,s             ; send notifications for all service states, flapping events, and sc
+        host_notification_options       d,u,r,f,s               ; send notifications for all host states, flapping events, and sched
+        service_notification_commands   notify-service-by-email,notify-service-by-sms   ; send service notifications via email
+        host_notification_commands      notify-host-by-email,notify-host-by-sms ; send host notifications via email
+        }
+define contact{
+        contact_name                    lizhiwei
+        email                           lizhiwei@oneboxtech.com
+	pager				13716769156
+
+        service_notification_period     24x7                    ; service notifications can be sent anytime
+        host_notification_period        24x7                    ; host notifications can be sent anytime
+        service_notification_options    w,u,c,r,f,s             ; send notifications for all service states, flapping events, and sc
+        host_notification_options       d,u,r,f,s               ; send notifications for all host states, flapping events, and sched
+        service_notification_commands   notify-service-by-email,notify-service-by-sms   ; send service notifications via email
+        host_notification_commands      notify-host-by-email,notify-host-by-sms ; send host notifications via email
+        }
+define contact{
+        contact_name                    liuxiangzheng
+        email                           liuxiangzheng@oneboxtech.com
+	pager				15010525040
+
+        service_notification_period     24x7                    ; service notifications can be sent anytime
+        host_notification_period        24x7                    ; host notifications can be sent anytime
+        service_notification_options    w,u,c,r,f,s             ; send notifications for all service states, flapping events, and sc
+        host_notification_options       d,u,r,f,s               ; send notifications for all host states, flapping events, and sched
+        service_notification_commands   notify-service-by-email,notify-service-by-sms   ; send service notifications via email
+        host_notification_commands      notify-host-by-email,notify-host-by-sms ; send host notifications via email
+        }
+
+###############################################################################
+###############################################################################
+#
+# CONTACT GROUPS
+#
+###############################################################################
+###############################################################################
+
+# We only have one contact in this simple configuration file, so there is
+# no need to create more than one contact group.
+
+define contactgroup{
+        contactgroup_name       ops
+        alias                   ops
+        members                 xingxiaolong,baigang,suhua,daofang,lizhiwei,liuxiangzheng
+        }

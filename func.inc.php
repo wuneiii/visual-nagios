@@ -9,7 +9,7 @@ function nagios_parse_hostgroup_members($members){
 
 
 }
-function url($header = '',$menu = ''){
+function url($header = '',$menu = '',$action = ''){
 	$retu = WEB_PATH;
 	if($header != ''){
 		$ret .= '?header='.$header;
@@ -18,7 +18,11 @@ function url($header = '',$menu = ''){
 
 		$ret .= '&menu='.$menu;
 	}
+	if($action != ''){
+		$ret .= '&action='.$action;
+	}
 	return $ret;
+
 }
 function C($key){
 

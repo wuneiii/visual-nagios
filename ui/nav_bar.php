@@ -8,7 +8,7 @@
         <td colspan="3">
             <table width="100%">
                 <tr>
-                    <td><a href="#"><?php echo $_GET['header'];?></a> -> <?php echo $_GET['menu'];?></td>
+                    <td><a href="#"><?php echo $main_nav;?></a></td>
                     <td align="right">Logged in as <strong>admin</strong> (<a href="/cacti/logout.php">Logout</a>)</td>
                 </tr>
             </table>

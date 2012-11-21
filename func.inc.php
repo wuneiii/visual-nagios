@@ -30,4 +30,9 @@ function C($key){
     return $config[$key];
 
 }
+function M($model_name){
+    global $model;
+    return $model[$model_name];
+
+}
 ?>

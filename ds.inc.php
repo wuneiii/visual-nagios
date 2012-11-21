@@ -1,4 +1,26 @@
 <?php
+
+
+    class DS{
+    
+        private $all_object_data;
+        private $all_config;
+
+        public function __construct(){
+            global $nagios;
+            $this->all_object_data = $nagios;
+        
+        }
+        public function get_all_object($type = ''){
+            if($type == ''){
+                return $this->all_object_data;
+            }
+            return $this->all_object_data[$type];
+        
+        }
+    
+    
+    }
 $CFG_DIR = '/home/serving/nagios/etc/objects/';
 $CFG_LIST = array();
 $CFG_DATA = array();

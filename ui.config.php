@@ -28,6 +28,12 @@
             ),
             
          ),
+        'setting' => array(
+            'text' => 'Setting',
+            'sub_menu' => array(
+                'Setting' => array('setting'=>'Setting'),   
+            ),
+         ),
 	);
     $config = array('app_name'=>'nagios_conf');
 
